@@ -57,7 +57,7 @@ router.post('/', async (req, res) => {
 
   try {
     const response = await fetch(
-      'https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta',,
+      'https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta',
       {
         method: 'POST',
         headers: {
@@ -65,22 +65,24 @@ router.post('/', async (req, res) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            inputs: `<|system|>${CHOWHAN_INFO}</s><|user|>${message}</s><|assistant|>`,
-            parameters: {
-              max_new_tokens: 300,
-              temperature: 0.7,
-              return_full_text: false,
-              wait_for_model: true
-            }
-          })
+          inputs: `<|system|>${CHOWHAN_INFO}</s><|user|>${message}</s><|assistant|>`,
+          parameters: {
+            max_new_tokens: 300,
+            temperature: 0.7,
+            return_full_text: false,
+            wait_for_model: true
+          }
+        })
       }
     );
 
     const data = await response.json();
-    const aiReply = data[0]?.generated_text || 
-                    "Sorry, I couldn't process that. Try again!";
 
-    console.log(`🤖 AI replied to: "${message}"`);
+    console.log('HF Response:', JSON.stringify(data));
+
+    const aiReply = data[0]?.generated_text || 
+                    data.error ||
+                    "Sorry, I couldn't process that. Try again!";
 
     res.json({ reply: aiReply });
 
