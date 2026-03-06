@@ -57,7 +57,7 @@ router.post('/', async (req, res) => {
 
   try {
     const response = await fetch(
-      'https://router.huggingface.co/hf-inference/models/HuggingFaceH4/zephyr-7b-beta',
+      'https://router.huggingface.co/v1/chat/completions',
       {
         method: 'POST',
         headers: {
@@ -65,22 +65,21 @@ router.post('/', async (req, res) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          inputs: `<|system|>${CHOWHAN_INFO}</s><|user|>${message}</s><|assistant|>`,
-          parameters: {
-            max_new_tokens: 300,
-            temperature: 0.7,
-            return_full_text: false,
-            wait_for_model: true
-          }
+          model: 'meta-llama/Llama-3.1-8B-Instruct:cerebras',
+          messages: [
+            { role: 'system', content: CHOWHAN_INFO },
+            { role: 'user', content: message }
+          ],
+          max_tokens: 300,
+          temperature: 0.7
         })
       }
     );
 
     const data = await response.json();
-
     console.log('HF Response:', JSON.stringify(data));
 
-    const aiReply = data[0]?.generated_text || 
+    const aiReply = data.choices?.[0]?.message?.content || 
                     data.error ||
                     "Sorry, I couldn't process that. Try again!";
 
