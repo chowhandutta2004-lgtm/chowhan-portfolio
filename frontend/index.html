@@ -5,12 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Chowhan Dutta — Gen AI Engineer</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- NAV -->
   <nav>
-    <a href="#" class="nav-logo">CD_</a>
+    <div class="nav-logo">
+      <span class="star">✳</span> CD
+    </div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -18,82 +24,99 @@
       <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <div class="visitor-badge">
-      👀 <span id="visitorCount">0</span> visitors
+    <div class="nav-right">
+      <span class="visitor-badge">👀 <span id="visitorCount">0</span> visitors</span>
     </div>
   </nav>
 
+  <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero-bg-circle"></div>
-    <div class="hero-bg-circle"></div>
-    <div class="hero-content">
-      <div class="hero-tag">Available for opportunities</div>
-      <h1 class="hero-name">
-        CHOWHAN<br><span>DUTTA</span>
-      </h1>
+    <div class="hero-left">
+      <div class="hero-img-wrapper">
+        <img src="image.jpg" alt="Chowhan Dutta" class="hero-img"/>
+        <div class="hero-img-overlay"></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <p class="hero-greeting">Hey there,</p>
+      <h1 class="hero-name">I'm Chowhan<br/>Dutta</h1>
+      <p class="hero-role">— <span>Gen AI Engineer</span></p>
       <p class="hero-summary">
         Final-year CS student at SRMIST specializing in AI-ML. 
         Passionate about Generative AI, deep learning, and building 
-        real-world AI-driven solutions.
+        real-world AI-driven solutions that create meaningful impact.
       </p>
       <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">View Projects →</a>
+        <a href="#contact" class="btn btn-primary">Get in touch →</a>
         <a href="https://github.com/chowhandutta2004-lgtm" target="_blank" class="btn btn-outline">GitHub ↗</a>
-        <a href="#contact" class="btn btn-outline">Contact Me</a>
       </div>
-    </div>
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-num">1+</div>
-        <div class="stat-label">AI Projects</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">8+</div>
-        <div class="stat-label">Frameworks</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">2026</div>
-        <div class="stat-label">Graduating</div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">1+</div>
+          <div class="stat-label">AI Projects</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">8+</div>
+          <div class="stat-label">Frameworks</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">2026</div>
+          <div class="stat-label">Graduating</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="skills">
-    <div class="section-label">02 / Expertise</div>
-    <h2 class="section-title">Technical <span>Skills</span></h2>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-header">
+      <span class="star">✳</span>
+      <h2>About <span>Me</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm a final-year Computer Science student at SRMIST with a deep passion for <span class="highlight">Generative AI</span> and <span class="highlight">Machine Learning</span>. I love building innovative projects that tackle real-world problems.</p>
+        <p>My focus is on developing AI-driven solutions — from OCR systems using CNNs and GANs to RAG pipelines and NLP applications. I'm a fast learner who thrives on challenges.</p>
+        <a href="mailto:chowhandutta2004@gmail.com" class="btn btn-primary" style="margin-top:1.5rem;display:inline-flex">Hire Me →</a>
+      </div>
+      <div class="about-info">
+        <div class="info-item">
+          <span class="info-label">Name</span>
+          <span class="info-value">Chowhan Dutta</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Email</span>
+          <span class="info-value">chowhandutta2004@gmail.com</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Location</span>
+          <span class="info-value">India</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Status</span>
+          <span class="info-value available">Available for opportunities</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="dark-section">
+    <div class="section-header">
+      <span class="star">✳</span>
+      <h2>My <span>Skills</span></h2>
+    </div>
     <div class="skills-grid">
       <div class="skill-card">
+        <div class="skill-card-icon">⚡</div>
         <div class="skill-card-title">Programming</div>
         <div class="skill-tags">
           <span class="skill-tag">Python</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-card-title">Frameworks & Libraries</div>
-        <div class="skill-tags">
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">TensorFlow</span>
-          <span class="skill-tag">Keras</span>
-          <span class="skill-tag">PyTorch</span>
-          <span class="skill-tag">OpenCV</span>
-          <span class="skill-tag">Pandas</span>
-          <span class="skill-tag">NumPy</span>
-          <span class="skill-tag">HuggingFace</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-card-title">Tools & Platforms</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Google Colab</span>
-          <span class="skill-tag">VS Code</span>
-          <span class="skill-tag">Git</span>
-          <span class="skill-tag">GitHub</span>
-          <span class="skill-tag">Jupyter</span>
-          <span class="skill-tag">Vercel</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-card-title">AI / ML Specialization</div>
+        <div class="skill-card-icon">🧠</div>
+        <div class="skill-card-title">AI / ML</div>
         <div class="skill-tags">
           <span class="skill-tag">Neural Networks</span>
           <span class="skill-tag">GANs</span>
@@ -103,76 +126,121 @@
           <span class="skill-tag">RAG Systems</span>
         </div>
       </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">📦</div>
+        <div class="skill-card-title">Frameworks</div>
+        <div class="skill-tags">
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">Keras</span>
+          <span class="skill-tag">PyTorch</span>
+          <span class="skill-tag">OpenCV</span>
+          <span class="skill-tag">Pandas</span>
+          <span class="skill-tag">NumPy</span>
+          <span class="skill-tag">HuggingFace</span>
+          <span class="skill-tag">React</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-icon">🛠️</div>
+        <div class="skill-card-title">Tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Google Colab</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">Jupyter</span>
+          <span class="skill-tag">VS Code</span>
+          <span class="skill-tag">Vercel</span>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- PROJECTS -->
   <section id="projects">
-    <div class="section-label">03 / Work</div>
-    <h2 class="section-title">Featured <span>Projects</span></h2>
-    <div id="projectsContainer">
-      <!-- Projects loaded from backend -->
+    <div class="section-header">
+      <span class="star">✳</span>
+      <h2>My <span>Projects</span></h2>
     </div>
+    <div id="projectsContainer"></div>
   </section>
 
-  <section id="education">
-    <div class="section-label">04 / Background</div>
-    <h2 class="section-title">Education</h2>
+  <!-- EDUCATION -->
+  <section id="education" class="dark-section">
+    <div class="section-header">
+      <span class="star">✳</span>
+      <h2>My <span>Education</span></h2>
+    </div>
     <div class="edu-timeline">
       <div class="edu-item">
         <div class="edu-year">2022 – 2026</div>
-        <div>
-          <div class="edu-degree">B.Tech in Computer Science and Engineering (Specialization in AI-ML)</div>
-          <div class="edu-school">SRM Institute of Science and Technology</div>
+        <div class="edu-content">
+          <h3>B.Tech in Computer Science and Engineering</h3>
+          <p class="edu-spec">(Specialization in AI-ML)</p>
+          <p class="edu-school">SRM Institute of Science and Technology</p>
           <span class="edu-gpa">GPA: 7.6</span>
         </div>
       </div>
       <div class="edu-item">
         <div class="edu-year">2022</div>
-        <div>
-          <div class="edu-degree">12th Grade (+2)</div>
-          <div class="edu-school">WiseWoods IS</div>
+        <div class="edu-content">
+          <h3>12th Grade (+2)</h3>
+          <p class="edu-school">WiseWoods IS</p>
           <span class="edu-gpa">79%</span>
         </div>
       </div>
       <div class="edu-item">
         <div class="edu-year">2020</div>
-        <div>
-          <div class="edu-degree">10th Grade</div>
-          <div class="edu-school">WiseWoods IS</div>
+        <div class="edu-content">
+          <h3>10th Grade</h3>
+          <p class="edu-school">WiseWoods IS</p>
           <span class="edu-gpa">70%</span>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- CERTIFICATIONS -->
   <section id="certifications">
-    <div class="section-label">05 / Achievements</div>
-    <h2 class="section-title">Certifications & <span>Achievements</span></h2>
+    <div class="section-header">
+      <span class="star">✳</span>
+      <h2>Achievements & <span>Certifications</span></h2>
+    </div>
     <div class="cert-grid">
       <div class="cert-item">
-        <div class="cert-icon"></div>
-        <div class="cert-text">Deep Learning & Neural Networks — Udemy</div>
+        <span class="cert-star">✳</span>
+        <span>Deep Learning & Neural Networks — Udemy</span>
       </div>
       <div class="cert-item">
-        <div class="cert-icon"></div>
-        <div class="cert-text">Computer Architecture — NPTEL</div>
+        <span class="cert-star">✳</span>
+        <span>Computer Architecture — NPTEL</span>
       </div>
       <div class="cert-item">
-        <div class="cert-icon"></div>
-        <div class="cert-text">SRM Hackathon 2024 — Top 10 Internal Round</div>
+        <span class="cert-star">✳</span>
+        <span>SRM Hackathon 2024 — Top 10 Internal Round</span>
       </div>
       <div class="cert-item">
-        <div class="cert-icon"></div>
-        <div class="cert-text">Director of Students Affairs — Discipline Committee Head</div>
+        <span class="cert-star">✳</span>
+        <span>Director of Students Affairs — Discipline Committee Head</span>
       </div>
     </div>
   </section>
 
-  <section id="contact">
-    <div class="section-label">06 / Let's Talk</div>
-    <h2 class="section-title">Get In <span>Touch</span></h2>
+  <!-- CONTACT -->
+  <section id="contact" class="dark-section">
+    <div class="section-header">
+      <span class="star">✳</span>
+      <h2>Get In <span>Touch</span></h2>
+    </div>
     <div class="contact-grid">
-      <div class="contact-form-wrapper">
+      <div class="contact-left">
+        <p class="contact-desc">I'm actively looking for opportunities in Gen AI and ML. Whether you have a project, job offer, or just want to connect — my inbox is always open!</p>
+        <a href="mailto:chowhandutta2004@gmail.com" class="contact-email">chowhandutta2004@gmail.com</a>
+        <div class="social-links">
+          <a href="https://github.com/chowhandutta2004-lgtm" target="_blank" class="social-link">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/chowhan-dutta-5582aa3a4" target="_blank" class="social-link">LinkedIn ↗</a>
+        </div>
+      </div>
+      <div class="contact-right">
         <div class="form-group">
           <input type="text" id="contactName" placeholder="Your Name" />
         </div>
@@ -182,38 +250,21 @@
         <div class="form-group">
           <textarea id="contactMessage" placeholder="Your Message" rows="5"></textarea>
         </div>
-        <button class="btn btn-primary" onclick="sendContact()">
-          Send Message →
-        </button>
+        <button class="btn btn-primary" onclick="sendContact()">Send Message →</button>
         <div id="contactStatus"></div>
-      </div>
-      <div class="contact-info">
-        <p class="contact-desc">
-          I'm actively looking for opportunities in Gen AI and ML. 
-          Whether you have a project, job offer, or just want to 
-          connect — my inbox is always open!
-        </p>
-        <a href="mailto:chowhandutta2004@gmail.com" class="contact-email">
-          chowhandutta2004@gmail.com
-        </a>
-        <div class="social-links">
-          <a href="https://github.com/chowhandutta2004-lgtm" target="_blank" class="social-link">GitHub ↗</a>
-          <a href="https://www.linkedin.com/in/chowhan-dutta-5582aa3a4" target="_blank" class="social-link">LinkedIn ↗</a>
-        </div>
       </div>
     </div>
   </section>
 
+  <!-- CHATBOT -->
   <div class="chat-widget" id="chatWidget">
     <div class="chat-header" onclick="toggleChat()">
-      <span>🤖 Ask AI about Chowhan</span>
+      <span>✳ Ask AI about Chowhan</span>
       <span id="chatToggle">▲</span>
     </div>
     <div class="chat-body" id="chatBody">
       <div class="chat-messages" id="chatMessages">
-        <div class="chat-msg bot">
-          Hey! 👋 I'm Chowhan's AI assistant. Ask me anything about him!
-        </div>
+        <div class="chat-msg bot">Hey! 👋 I'm Chowhan's AI assistant. Ask me anything about him!</div>
       </div>
       <div class="chat-input-row">
         <input type="text" id="chatInput" placeholder="Ask something..." />
@@ -222,11 +273,20 @@
     </div>
   </div>
 
+  <!-- FOOTER -->
   <footer>
-    <span>© 2025 Chowhan Dutta</span>
+    <span><span class="star">✳</span> Chowhan Dutta © 2025</span>
     <span>Built with ❤️ and a lot of AI</span>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // Custom cursor
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+  </script>
 </body>
 </html>
