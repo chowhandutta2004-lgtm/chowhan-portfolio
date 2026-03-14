@@ -1,206 +1,525 @@
 // ====================================
-// script.js — Connects frontend to backend
+// script.js — Frontend logic + animations
 // ====================================
 
 // ====================================
 // 1. VISITOR COUNTER
-// Calls backend to count every visit
 // ====================================
 async function countVisitor() {
-    try {
-      const response = await fetch('/api/visitors');
-      const data = await response.json();
-      
-      // Update the visitor count in the nav
-      document.getElementById('visitorCount').textContent = data.count;
-    } catch (error) {
-      console.error('Visitor count error:', error);
-    }
+  try {
+    const response = await fetch('/api/visitors');
+    const data = await response.json();
+    document.getElementById('visitorCount').textContent = data.count;
+  } catch (error) {
+    console.error('Visitor count error:', error);
   }
-  
-  // ====================================
-  // 2. LOAD PROJECTS
-  // Fetches projects from backend
-  // ====================================
-  const projects = [
-    {
-      number: '01',
-      name: 'Advanced OCR System with CNN and GAN',
-      description: 'Built an advanced Optical Character Recognition system combining CNNs for character detection and Generative AI (GANs) for data augmentation and context-aware interpretation of handwritten text.',
-      details: [
-        'Developed CNN architecture to extract spatial features and classify handwritten characters with high accuracy',
-        'Implemented GAN-based synthetic data generation to augment training dataset and improve model robustness',
-        'Integrated context-aware interpretation layer using Generative AI for semantic understanding',
-        'Achieved real-time recognition with scalable pipeline adaptable for multi-language datasets'
-      ],
-      technologies: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'GAN', 'NumPy', 'Pandas', 'Jupyter'],
-      github: 'https://github.com/chowhandutta2004-lgtm/Handwritten-Character-Recognition-using-CNN-and-Generative-AI'
-    }
-  ];
-  
-  function loadProjects() {
-    const container = document.getElementById('projectsContainer');
-    
-    container.innerHTML = projects.map(project => `
-      <div class="project-card reveal">
-        <div class="project-number">${project.number}</div>
-        <h3 class="project-name">${project.name}</h3>
-        <p class="project-desc">${project.description}</p>
-        <ul class="project-details">
-          ${project.details.map(d => `<li>${d}</li>`).join('')}
-        </ul>
-        <div class="project-tech">
-          ${project.technologies.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+}
+
+// ====================================
+// 2. PROJECTS DATA + LOADER
+// ====================================
+const projects = [
+  {
+    number: '01',
+    name: 'Advanced OCR System with CNN and GAN',
+    description: 'OCR system combining CNNs for character detection and GANs for data augmentation of handwritten text.',
+    highlights: [
+      'CNN architecture for spatial feature extraction',
+      'GAN-based synthetic data generation',
+      'Context-aware interpretation using Gen AI',
+      'Real-time recognition pipeline'
+    ],
+    technologies: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'GAN', 'NumPy'],
+    github: 'https://github.com/chowhandutta2004-lgtm/Handwritten-Character-Recognition-using-CNN-and-Generative-AI',
+    video: 'ocr-cnn-gan.mp4',
+    gradient: 'linear-gradient(135deg, #0d47a1, #1565c0, #00838f)',
+    accentColor: '#00e5ff'
+  },
+  {
+    number: '02',
+    name: 'RAGs AI — Chat With Your Documents',
+    description: 'Full-stack RAG app where users upload documents, which get chunked and embedded into ChromaDB, then chat with them via GPT-4o.',
+    highlights: [
+      'Google Auth + per-user vector isolation',
+      'Supports PDF, DOCX, CSV, PPTX, URLs',
+      'Streaming SSE chat with confidence scoring',
+      'Session management + document analytics'
+    ],
+    technologies: ['React', 'FastAPI', 'GPT-4o', 'ChromaDB', 'LangChain', 'Firebase', 'Tailwind'],
+    github: 'https://github.com/chowhandutta2004-lgtm/RAGs_AI',
+    website: 'https://askmydocs-omega.vercel.app/',
+    video: 'rags-ai.mp4',
+    gradient: 'linear-gradient(135deg, #4a148c, #7b1fa2, #e040fb)',
+    accentColor: '#e040fb'
+  }
+];
+
+function loadProjects() {
+  const container = document.getElementById('projectsContainer');
+
+  container.innerHTML = projects.map(project => `
+    <div class="project-flashcard reveal" style="--card-accent: ${project.accentColor}">
+      <div class="project-flashcard-bg" style="background: ${project.gradient}"></div>
+      ${project.video ? `<video src="${project.video}" class="project-flashcard-img" autoplay muted loop playsinline></video>` : project.image ? `<img src="${project.image}" alt="${project.name}" class="project-flashcard-img"/>` : ''}
+      <div class="project-flashcard-overlay"></div>
+      <span class="project-flashcard-number">${project.number}</span>
+      <div class="project-flashcard-content">
+        <h3 class="project-flashcard-title">${project.name}</h3>
+        <p class="project-flashcard-desc">${project.description}</p>
+        ${project.highlights ? `<div class="project-flashcard-highlights">${project.highlights.map(h => `<span class="project-flashcard-highlight">${h}</span>`).join('')}</div>` : ''}
+        <div class="project-flashcard-tags">
+          ${project.technologies.map(t => `<span class="project-flashcard-tag">${t}</span>`).join('')}
         </div>
-        <a href="${project.github}" target="_blank" class="project-link">
-          View on GitHub ↗
-        </a>
+        <div class="project-flashcard-links">
+          <a href="${project.github}" target="_blank" class="project-flashcard-link">GitHub →</a>
+          ${project.website ? `<a href="${project.website}" target="_blank" class="project-flashcard-link project-flashcard-link-site">Visit Site →</a>` : ''}
+        </div>
       </div>
-    `).join('');
-  
-    // Trigger reveal animation on loaded projects
-    observeElements();
+    </div>
+  `).join('');
+
+  observeElements();
+  initCardTilt();
+}
+
+// ====================================
+// 3. CONTACT FORM
+// ====================================
+async function sendContact() {
+  const name = document.getElementById('contactName').value;
+  const email = document.getElementById('contactEmail').value;
+  const message = document.getElementById('contactMessage').value;
+  const status = document.getElementById('contactStatus');
+
+  if (!name || !email || !message) {
+    status.textContent = 'Please fill all fields.';
+    status.className = 'status-error';
+    return;
   }
-  
-  // ====================================
-  // 3. CONTACT FORM
-  // Sends form data to backend
-  // ====================================
-  async function sendContact() {
-    const name = document.getElementById('contactName').value;
-    const email = document.getElementById('contactEmail').value;
-    const message = document.getElementById('contactMessage').value;
-    const status = document.getElementById('contactStatus');
-  
-    // Validate fields
-    if (!name || !email || !message) {
-      status.textContent = '⚠️ Please fill all fields!';
-      status.className = 'status-error';
-      return;
-    }
-  
-    // Show loading state
-    status.textContent = '⏳ Sending...';
-    status.className = '';
-  
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, message })
-      });
-  
-      const data = await response.json();
-  
-      if (data.success) {
-        status.textContent = '✅ Message sent successfully!';
-        status.className = 'status-success';
-        // Clear the form
-        document.getElementById('contactName').value = '';
-        document.getElementById('contactEmail').value = '';
-        document.getElementById('contactMessage').value = '';
-      } else {
-        status.textContent = '❌ Failed to send. Try again!';
-        status.className = 'status-error';
-      }
-    } catch (error) {
-      status.textContent = '❌ Something went wrong!';
-      status.className = 'status-error';
-    }
-  }
-  
-  // ====================================
-  // 4. AI CHATBOT
-  // Sends messages to Hugging Face via backend
-  // ====================================
-  function toggleChat() {
-    const body = document.getElementById('chatBody');
-    const toggle = document.getElementById('chatToggle');
-    
-    body.classList.toggle('hidden');
-    toggle.textContent = body.classList.contains('hidden') ? '▼' : '▲';
-  }
-  
-  async function sendChat() {
-    const input = document.getElementById('chatInput');
-    const messages = document.getElementById('chatMessages');
-    const message = input.value.trim();
-  
-    // Don't send empty messages
-    if (!message) return;
-  
-    // Show user message
-    messages.innerHTML += `
-      <div class="chat-msg user">${message}</div>
-    `;
-  
-    // Clear input
-    input.value = '';
-  
-    // Show typing indicator
-    messages.innerHTML += `
-      <div class="chat-msg typing" id="typing">AI is thinking...</div>
-    `;
-  
-    // Scroll to bottom
-    messages.scrollTop = messages.scrollHeight;
-  
-    try {
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message })
-      });
-  
-      const data = await response.json();
-  
-      // Remove typing indicator
-      document.getElementById('typing').remove();
-  
-      // Show AI reply
-      messages.innerHTML += `
-        <div class="chat-msg bot">${data.reply || data.error}</div>
-      `;
-  
-    } catch (error) {
-      document.getElementById('typing').remove();
-      messages.innerHTML += `
-        <div class="chat-msg bot">Sorry, something went wrong! Try again.</div>
-      `;
-    }
-  
-    // Scroll to bottom again
-    messages.scrollTop = messages.scrollHeight;
-  }
-  
-  // Allow pressing Enter to send chat
-  document.getElementById('chatInput').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') sendChat();
-  });
-  
-  // ====================================
-  // 5. SCROLL REVEAL ANIMATION
-  // Elements fade in as you scroll down
-  // ====================================
-  function observeElements() {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-  
-    document.querySelectorAll('.reveal').forEach(el => {
-      observer.observe(el);
+
+  status.textContent = 'Sending...';
+  status.className = '';
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message })
     });
+
+    const data = await response.json();
+
+    if (data.success) {
+      status.textContent = 'Message sent successfully!';
+      status.className = 'status-success';
+      document.getElementById('contactName').value = '';
+      document.getElementById('contactEmail').value = '';
+      document.getElementById('contactMessage').value = '';
+    } else {
+      status.textContent = 'Failed to send. Try again!';
+      status.className = 'status-error';
+    }
+  } catch (error) {
+    status.textContent = 'Something went wrong!';
+    status.className = 'status-error';
   }
-  
-  // ====================================
-  // INITIALIZE — Run when page loads
-  // ====================================
-  window.addEventListener('load', () => {
-    countVisitor();   // Count this visit
-    loadProjects();   // Load projects
-    observeElements(); // Start scroll animations
+}
+
+// ====================================
+// 4. AI CHATBOT
+// ====================================
+function toggleChat() {
+  const body = document.getElementById('chatBody');
+  const toggle = document.getElementById('chatToggle');
+  body.classList.toggle('hidden');
+  toggle.textContent = body.classList.contains('hidden') ? '▼' : '▲';
+}
+
+async function sendChat() {
+  const input = document.getElementById('chatInput');
+  const messages = document.getElementById('chatMessages');
+  const message = input.value.trim();
+
+  if (!message) return;
+
+  messages.innerHTML += `<div class="chat-msg user">${message}</div>`;
+  input.value = '';
+  messages.innerHTML += `<div class="chat-msg typing" id="typing">AI is thinking...</div>`;
+  messages.scrollTop = messages.scrollHeight;
+
+  try {
+    const response = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message })
+    });
+
+    const data = await response.json();
+    document.getElementById('typing').remove();
+    messages.innerHTML += `<div class="chat-msg bot">${data.reply || data.error}</div>`;
+  } catch (error) {
+    document.getElementById('typing').remove();
+    messages.innerHTML += `<div class="chat-msg bot">Sorry, something went wrong! Try again.</div>`;
+  }
+
+  messages.scrollTop = messages.scrollHeight;
+}
+
+document.getElementById('chatInput').addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') sendChat();
+});
+
+// ====================================
+// 5. SCROLL REVEAL ANIMATION
+// ====================================
+function observeElements() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+    observer.observe(el);
   });
+}
+
+// ====================================
+// 6. CUSTOM CURSOR
+// ====================================
+function initCursor() {
+  const cursor = document.getElementById('cursor');
+  const follower = document.getElementById('cursorFollower');
+  let mouseX = 0, mouseY = 0;
+  let followerX = 0, followerY = 0;
+
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.left = mouseX + 'px';
+    cursor.style.top = mouseY + 'px';
+  });
+
+  function animateFollower() {
+    followerX += (mouseX - followerX) * 0.1;
+    followerY += (mouseY - followerY) * 0.1;
+    follower.style.left = followerX + 'px';
+    follower.style.top = followerY + 'px';
+    requestAnimationFrame(animateFollower);
+  }
+  animateFollower();
+}
+
+// ====================================
+// 7. NAVBAR SCROLL EFFECT
+// ====================================
+function initNavScroll() {
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+}
+
+// ====================================
+// 8. LOADER ANIMATION
+// ====================================
+function initLoader() {
+  const loader = document.getElementById('loader');
+  const line1 = loader.querySelectorAll('.loader-text:first-child span');
+  const line2 = loader.querySelectorAll('.loader-text-2 span');
+
+  const tl = gsap.timeline();
+
+  tl.to(line1, {
+    opacity: 1,
+    y: 0,
+    duration: 0.5,
+    stagger: 0.08,
+    ease: 'power3.out'
+  })
+  .to(line2, {
+    opacity: 1,
+    y: 0,
+    duration: 0.5,
+    stagger: 0.08,
+    ease: 'power3.out'
+  }, '-=0.2')
+  .to(loader, {
+    opacity: 0,
+    duration: 0.6,
+    delay: 0.4,
+    ease: 'power2.inOut',
+    onComplete: () => {
+      loader.style.display = 'none';
+      initHeroAnimation();
+    }
+  });
+}
+
+// ====================================
+// 9. HERO ANIMATION (GSAP)
+// ====================================
+function initHeroAnimation() {
+  // Title lines
+  gsap.from('#heroLine1', {
+    y: 120,
+    opacity: 0,
+    duration: 1.2,
+    ease: 'power4.out'
+  });
+
+  gsap.from('#heroLine2', {
+    y: 120,
+    opacity: 0,
+    duration: 1.2,
+    delay: 0.2,
+    ease: 'power4.out'
+  });
+
+  // Hero card
+  gsap.from('#heroCard', {
+    y: 60,
+    opacity: 0,
+    duration: 1,
+    delay: 0.6,
+    ease: 'power3.out'
+  });
+
+  // Categories
+  gsap.from('.hero-cat', {
+    y: 30,
+    opacity: 0,
+    duration: 0.6,
+    stagger: 0.1,
+    delay: 0.8,
+    ease: 'power3.out'
+  });
+
+  // Hero image
+  gsap.from('#heroImage', {
+    scale: 1.1,
+    opacity: 0,
+    duration: 1.5,
+    delay: 0.3,
+    ease: 'power2.out'
+  });
+}
+
+// ====================================
+// 10. GSAP SCROLL ANIMATIONS
+// ====================================
+function initScrollAnimations() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Hero parallax — image scales down and fades on scroll
+  gsap.to('#heroImage', {
+    scrollTrigger: {
+      trigger: '.hero',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true
+    },
+    scale: 0.85,
+    opacity: 0,
+    y: -100
+  });
+
+  // Hero title parallax
+  gsap.to('.hero-title', {
+    scrollTrigger: {
+      trigger: '.hero',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true
+    },
+    y: -200,
+    opacity: 0
+  });
+
+  // About background text parallax
+  gsap.to('#aboutBgText', {
+    scrollTrigger: {
+      trigger: '.about',
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    },
+    y: -100,
+    scale: 1.05
+  });
+
+  // About photo parallax
+  gsap.to('#aboutPhoto', {
+    scrollTrigger: {
+      trigger: '.about',
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    },
+    y: -60
+  });
+
+  // About left blocks
+  gsap.utils.toArray('.about-left .about-block').forEach((block, i) => {
+    gsap.from(block, {
+      scrollTrigger: {
+        trigger: block,
+        start: 'top 85%',
+        toggleActions: 'play none none none'
+      },
+      x: -50,
+      opacity: 0,
+      duration: 0.8,
+      delay: i * 0.15,
+      ease: 'power3.out'
+    });
+  });
+
+  // About right blocks
+  gsap.utils.toArray('.about-right .about-block').forEach((block, i) => {
+    gsap.from(block, {
+      scrollTrigger: {
+        trigger: block,
+        start: 'top 85%',
+        toggleActions: 'play none none none'
+      },
+      x: 50,
+      opacity: 0,
+      duration: 0.8,
+      delay: i * 0.15,
+      ease: 'power3.out'
+    });
+  });
+
+  // About tagline
+  gsap.from('#aboutTagline', {
+    scrollTrigger: {
+      trigger: '#aboutTagline',
+      start: 'top 90%',
+      toggleActions: 'play none none none'
+    },
+    y: 30,
+    opacity: 0,
+    duration: 1,
+    ease: 'power3.out'
+  });
+
+  // Tech stack icons
+  gsap.from('.stack-icon', {
+    scrollTrigger: {
+      trigger: '.tech-stack',
+      start: 'top 80%',
+      toggleActions: 'play none none none'
+    },
+    y: 40,
+    opacity: 0,
+    duration: 0.6,
+    stagger: 0.08,
+    ease: 'power3.out'
+  });
+
+  // Projects header
+  gsap.from('.projects-title', {
+    scrollTrigger: {
+      trigger: '.projects-header',
+      start: 'top 80%',
+      toggleActions: 'play none none none'
+    },
+    y: 60,
+    opacity: 0,
+    duration: 1,
+    ease: 'power3.out'
+  });
+
+  // Contact title reveal
+  gsap.from('#contactTitle', {
+    scrollTrigger: {
+      trigger: '#contactTitle',
+      start: 'top 85%',
+      toggleActions: 'play none none none'
+    },
+    y: 100,
+    opacity: 0,
+    duration: 1,
+    ease: 'power4.out'
+  });
+
+  // Contact cards stagger
+  gsap.from('.contact-card', {
+    scrollTrigger: {
+      trigger: '.contact-grid',
+      start: 'top 80%',
+      toggleActions: 'play none none none'
+    },
+    y: 50,
+    opacity: 0,
+    duration: 0.7,
+    stagger: 0.12,
+    ease: 'power3.out'
+  });
+}
+
+// ====================================
+// 11. 3D CARD TILT EFFECT
+// ====================================
+function initCardTilt() {
+  document.querySelectorAll('.project-flashcard').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = (y - centerY) / centerY * -8;
+      const rotateY = (x - centerX) / centerX * 8;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px) scale(1.02)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)';
+    });
+  });
+}
+
+// ====================================
+// 12. DRAG TO SCROLL (PROJECTS)
+// ====================================
+function initDragScroll() {
+  const slider = document.getElementById('projectsContainer');
+  let isDown = false, startX, scrollLeft;
+
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener('mouseleave', () => isDown = false);
+  slider.addEventListener('mouseup', () => isDown = false);
+  slider.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    slider.scrollLeft = scrollLeft - (x - startX) * 1.5;
+  });
+}
+
+// ====================================
+// INITIALIZE
+// ====================================
+window.addEventListener('load', () => {
+  countVisitor();
+  loadProjects();
+  initCursor();
+  initNavScroll();
+  initLoader();
+  initScrollAnimations();
+  initDragScroll();
+  observeElements();
+});

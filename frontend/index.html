@@ -4,289 +4,303 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Chowhan Dutta — Gen AI Engineer</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css?v=2" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
-  <!-- CURSOR -->
+  <!-- CUSTOM CURSOR -->
   <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-text">
+      <span>C</span><span>H</span><span>O</span><span>W</span><span>H</span><span>A</span><span>N</span>
+    </div>
+    <div class="loader-text loader-text-2">
+      <span>D</span><span>U</span><span>T</span><span>T</span><span>A</span>
+    </div>
+  </div>
+
+  <!-- FLOATING CONNECT BUTTON -->
+  <a href="#contact" class="connect-float" id="connectFloat">
+    <span>CONNECT</span>
+  </a>
 
   <!-- NAV -->
-  <nav>
-    <div class="nav-logo">
-      <span class="star">✳</span> CD
-    </div>
+  <nav id="navbar">
+    <div class="nav-logo">chowhan</div>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#home">home</a></li>
+      <li><a href="#about">about</a></li>
+      <li><a href="#projects">projects</a></li>
     </ul>
-    <div class="nav-right">
-      <span class="visitor-badge">👀 <span id="visitorCount">0</span> visitors</span>
-    </div>
+    <a href="#contact" class="nav-cta">
+      Get in touch <span class="nav-cta-dot"></span>
+    </a>
   </nav>
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero-left">
-      <div class="hero-img-wrapper">
-        <img src="image.jpg" alt="Chowhan Dutta" class="hero-img"/>
-        <div class="hero-img-overlay"></div>
+    <div class="hero-bg-gradient"></div>
+    <div class="hero-image-container" id="heroImage">
+      <img src="image.jpg" alt="Chowhan Dutta" class="hero-img"/>
+      <div class="hero-image-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="hero-line hero-line-1" id="heroLine1">Gen AI</span>
+        <span class="hero-line hero-line-2" id="heroLine2"><i>Engineer</i></span>
+      </h1>
+      <div class="hero-card" id="heroCard">
+        <h3>Designing intelligence that amplifies human potential.</h3>
+        <p>AI-driven solutions built with clarity and purpose. I craft intelligent systems using deep learning, NLP, and generative models that push boundaries.</p>
+      </div>
+      <div class="hero-categories" id="heroCats">
+        <div class="hero-cat"><span class="hero-cat-icon">◈</span> Deep Learning</div>
+        <div class="hero-cat"><span class="hero-cat-icon">◇</span> NLP</div>
+        <div class="hero-cat"><span class="hero-cat-icon">▣</span> Computer Vision</div>
+        <div class="hero-cat"><span class="hero-cat-icon">◆</span> Generative AI</div>
       </div>
     </div>
-    <div class="hero-right">
-      <p class="hero-greeting">Hey there,</p>
-      <h1 class="hero-name">I'm Chowhan<br/>Dutta</h1>
-      <p class="hero-role">— <span>Gen AI Engineer</span></p>
-      <p class="hero-summary">
-        Final-year CS student at SRMIST specializing in AI-ML. 
-        Passionate about Generative AI, deep learning, and building 
-        real-world AI-driven solutions that create meaningful impact.
-      </p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">Get in touch →</a>
-        <a href="https://github.com/chowhandutta2004-lgtm" target="_blank" class="btn btn-outline">GitHub ↗</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <div class="stat-num">1+</div>
-          <div class="stat-label">AI Projects</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">8+</div>
-          <div class="stat-label">Frameworks</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">2026</div>
-          <div class="stat-label">Graduating</div>
-        </div>
-      </div>
+    <div class="hero-scroll-indicator">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
     </div>
   </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <span>GEN AI ENGINEER &nbsp;✦&nbsp; DEEP LEARNING &nbsp;✦&nbsp; NEURAL NETWORKS &nbsp;✦&nbsp; COMPUTER VISION &nbsp;✦&nbsp; NLP &nbsp;✦&nbsp; GENERATIVE AI &nbsp;✦&nbsp; GEN AI ENGINEER &nbsp;✦&nbsp; DEEP LEARNING &nbsp;✦&nbsp; NEURAL NETWORKS &nbsp;✦&nbsp; COMPUTER VISION &nbsp;✦&nbsp; NLP &nbsp;✦&nbsp; GENERATIVE AI &nbsp;✦&nbsp;</span>
+    </div>
+  </div>
 
   <!-- ABOUT -->
-  <section id="about">
-    <div class="section-header">
-      <span class="star">✳</span>
-      <h2>About <span>Me</span></h2>
+  <section class="about" id="about">
+    <div class="about-bg-text" id="aboutBgText">ABOUT</div>
+    <div class="about-photo-container" id="aboutPhoto">
+      <img src="img.png-removebg-preview.png" alt="Chowhan Dutta" class="about-photo"/>
+      <div class="about-photo-glow"></div>
     </div>
-    <div class="about-grid">
-      <div class="about-text">
-        <p>I'm a final-year Computer Science student at SRMIST with a deep passion for <span class="highlight">Generative AI</span> and <span class="highlight">Machine Learning</span>. I love building innovative projects that tackle real-world problems.</p>
-        <p>My focus is on developing AI-driven solutions — from OCR systems using CNNs and GANs to RAG pipelines and NLP applications. I'm a fast learner who thrives on challenges.</p>
-        <a href="mailto:chowhandutta2004@gmail.com" class="btn btn-primary" style="margin-top:1.5rem;display:inline-flex">Hire Me →</a>
+    <div class="about-left">
+      <div class="about-block">
+        <h4 class="about-label">EDUCATION</h4>
+        <p>SRMIST — B.Tech CSE (AI-ML)</p>
+        <p>WiseWoods IS — 12th Grade</p>
+        <p>WiseWoods IS — 10th Grade</p>
       </div>
-      <div class="about-info">
-        <div class="info-item">
-          <span class="info-label">Name</span>
-          <span class="info-value">Chowhan Dutta</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Email</span>
-          <span class="info-value">chowhandutta2004@gmail.com</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Location</span>
-          <span class="info-value">India</span>
-        </div>
-        <div class="info-item">
-          <span class="info-label">Status</span>
-          <span class="info-value available">Available for opportunities</span>
-        </div>
+      <div class="about-block">
+        <h4 class="about-label">EXPERIENCE</h4>
+        <p>Independent AI projects &amp; research</p>
+        <p>SRM Hackathon 2024 — Top 10</p>
+      </div>
+      <div class="about-block">
+        <h4 class="about-label">ACHIEVEMENTS</h4>
+        <p>Deep Learning &amp; Neural Networks — Udemy</p>
+        <p>Computer Architecture — NPTEL</p>
+        <p>DSA — Discipline Committee Head</p>
       </div>
     </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="dark-section">
-    <div class="section-header">
-      <span class="star">✳</span>
-      <h2>My <span>Skills</span></h2>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <div class="skill-card-icon">⚡</div>
-        <div class="skill-card-title">Programming</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Python</span>
-        </div>
+    <div class="about-right">
+      <div class="about-block">
+        <h4 class="about-label">LANGUAGES</h4>
+        <p>English</p>
+        <p>Telugu</p>
+        <p>Tamil</p>
       </div>
-      <div class="skill-card">
-        <div class="skill-card-icon">🧠</div>
-        <div class="skill-card-title">AI / ML</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Neural Networks</span>
-          <span class="skill-tag">GANs</span>
-          <span class="skill-tag">Deep Learning</span>
-          <span class="skill-tag">Computer Vision</span>
-          <span class="skill-tag">NLP</span>
-          <span class="skill-tag">RAG Systems</span>
-        </div>
+      <div class="about-block">
+        <h4 class="about-label">SOFTWARE</h4>
+        <p>Listed below</p>
       </div>
-      <div class="skill-card">
-        <div class="skill-card-icon">📦</div>
-        <div class="skill-card-title">Frameworks</div>
-        <div class="skill-tags">
-          <span class="skill-tag">TensorFlow</span>
-          <span class="skill-tag">Keras</span>
-          <span class="skill-tag">PyTorch</span>
-          <span class="skill-tag">OpenCV</span>
-          <span class="skill-tag">Pandas</span>
-          <span class="skill-tag">NumPy</span>
-          <span class="skill-tag">HuggingFace</span>
-          <span class="skill-tag">React</span>
-        </div>
+      <div class="about-block">
+        <h4 class="about-label">CONTACT</h4>
+        <p>Please visit the <a href="#contact" class="about-link">Connect page</a></p>
       </div>
-      <div class="skill-card">
-        <div class="skill-card-icon">🛠️</div>
-        <div class="skill-card-title">Tools</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Google Colab</span>
-          <span class="skill-tag">Git</span>
-          <span class="skill-tag">GitHub</span>
-          <span class="skill-tag">Jupyter</span>
-          <span class="skill-tag">VS Code</span>
-          <span class="skill-tag">Vercel</span>
-        </div>
+      <div class="about-block">
+        <h4 class="about-label">INTERESTS</h4>
+        <p>GlowUp</p>
+        <p>Generative AI</p>
       </div>
     </div>
+    <p class="about-tagline" id="aboutTagline">leveraging Artificial Intelligence</p>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects">
-    <div class="section-header">
-      <span class="star">✳</span>
-      <h2>My <span>Projects</span></h2>
+  <section class="projects" id="projects">
+    <div class="projects-header">
+      <h2 class="projects-title">Featured <i>Projects</i></h2>
+      <p class="projects-subtitle">Where experimentation, curiosity, and a growing understanding of AI principles come together to form the base of my work.</p>
     </div>
-    <div id="projectsContainer"></div>
+    <div id="projectsContainer" class="projects-grid"></div>
   </section>
 
-  <!-- EDUCATION -->
-  <section id="education" class="dark-section">
-    <div class="section-header">
-      <span class="star">✳</span>
-      <h2>My <span>Education</span></h2>
-    </div>
-    <div class="edu-timeline">
-      <div class="edu-item">
-        <div class="edu-year">2022 – 2026</div>
-        <div class="edu-content">
-          <h3>B.Tech in Computer Science and Engineering</h3>
-          <p class="edu-spec">(Specialization in AI-ML)</p>
-          <p class="edu-school">SRM Institute of Science and Technology</p>
-          <span class="edu-gpa">GPA: 7.6</span>
-        </div>
-      </div>
-      <div class="edu-item">
-        <div class="edu-year">2022</div>
-        <div class="edu-content">
-          <h3>12th Grade (+2)</h3>
-          <p class="edu-school">WiseWoods IS</p>
-          <span class="edu-gpa">79%</span>
-        </div>
-      </div>
-      <div class="edu-item">
-        <div class="edu-year">2020</div>
-        <div class="edu-content">
-          <h3>10th Grade</h3>
-          <p class="edu-school">WiseWoods IS</p>
-          <span class="edu-gpa">70%</span>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- TECH STACK -->
+  <section class="tech-stack" id="techStack">
+    <h3 class="stack-title">MY TECH STACK</h3>
 
-  <!-- CERTIFICATIONS -->
-  <section id="certifications">
-    <div class="section-header">
-      <span class="star">✳</span>
-      <h2>Achievements & <span>Certifications</span></h2>
-    </div>
-    <div class="cert-grid">
-      <div class="cert-item">
-        <span class="cert-star">✳</span>
-        <span>Deep Learning & Neural Networks — Udemy</span>
-      </div>
-      <div class="cert-item">
-        <span class="cert-star">✳</span>
-        <span>Computer Architecture — NPTEL</span>
-      </div>
-      <div class="cert-item">
-        <span class="cert-star">✳</span>
-        <span>SRM Hackathon 2024 — Top 10 Internal Round</span>
-      </div>
-      <div class="cert-item">
-        <span class="cert-star">✳</span>
-        <span>Director of Students Affairs — Discipline Committee Head</span>
+    <div class="stack-category-row reveal">
+      <h4 class="stack-row-title">Intelligence Layer</h4>
+      <div class="stack-icons">
+        <div class="stack-icon" data-name="Python"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"/></div>
+        <div class="stack-icon" data-name="TensorFlow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow"/></div>
+        <div class="stack-icon" data-name="PyTorch"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch"/></div>
+        <div class="stack-icon" data-name="OpenAI"><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/openai.svg" alt="OpenAI" class="invert-icon"/></div>
       </div>
     </div>
+
+    <div class="stack-category-row reveal">
+      <h4 class="stack-row-title">Neural Craft</h4>
+      <div class="stack-icons">
+        <div class="stack-icon" data-name="Keras"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg" alt="Keras"/></div>
+        <div class="stack-icon" data-name="OpenCV"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV"/></div>
+        <div class="stack-icon" data-name="NumPy"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"/></div>
+        <div class="stack-icon" data-name="Pandas"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"/></div>
+        <div class="stack-icon" data-name="Matplotlib"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib"/></div>
+        <div class="stack-icon" data-name="LangChain"><img src="https://logo.svgcdn.com/simple-icons/langchain-dark.svg" alt="LangChain" class="invert-icon"/></div>
+        <div class="stack-icon" data-name="ChromaDB"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="42" height="42"><circle cx="50" cy="50" r="40" fill="none" stroke="#FFD700" stroke-width="6"/><circle cx="35" cy="45" r="10" fill="#FF6B6B"/><circle cx="65" cy="45" r="10" fill="#4ECDC4"/><circle cx="50" cy="65" r="10" fill="#FFD700"/></svg></div>
+      </div>
+    </div>
+
+    <div class="stack-category-row reveal">
+      <h4 class="stack-row-title">Build Engine</h4>
+      <div class="stack-icons">
+        <div class="stack-icon" data-name="React"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"/></div>
+        <div class="stack-icon" data-name="Node.js"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"/></div>
+        <div class="stack-icon" data-name="FastAPI"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI"/></div>
+        <div class="stack-icon" data-name="Tailwind"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind"/></div>
+        <div class="stack-icon" data-name="Git"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"/></div>
+      </div>
+    </div>
+
+    <div class="stack-category-row reveal">
+      <h4 class="stack-row-title">Command Center</h4>
+      <div class="stack-icons">
+        <div class="stack-icon" data-name="VS Code"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"/></div>
+        <div class="stack-icon" data-name="GitHub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="invert-icon"/></div>
+        <div class="stack-icon" data-name="Jupyter"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter"/></div>
+        <div class="stack-icon" data-name="Firebase"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase"/></div>
+        <div class="stack-icon" data-name="Vercel"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" alt="Vercel" class="invert-icon"/></div>
+        <div class="stack-icon" data-name="Render"><img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/render.svg" alt="Render" class="invert-icon"/></div>
+      </div>
+    </div>
+
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="dark-section">
-    <div class="section-header">
-      <span class="star">✳</span>
-      <h2>Get In <span>Touch</span></h2>
-    </div>
+  <section class="contact" id="contact">
+    <h1 class="contact-title" id="contactTitle">LET'S CONNECT</h1>
     <div class="contact-grid">
-      <div class="contact-left">
-        <p class="contact-desc">I'm actively looking for opportunities in Gen AI and ML. Whether you have a project, job offer, or just want to connect — my inbox is always open!</p>
-        <a href="mailto:chowhandutta2004@gmail.com" class="contact-email">chowhandutta2004@gmail.com</a>
-        <div class="social-links">
-          <a href="https://github.com/chowhandutta2004-lgtm" target="_blank" class="social-link">GitHub ↗</a>
-          <a href="https://www.linkedin.com/in/chowhan-dutta-5582aa3a4" target="_blank" class="social-link">LinkedIn ↗</a>
+      <div class="contact-card">
+        <div class="contact-card-top">
+          <span class="contact-card-label">NAME</span>
+          <span class="contact-card-arrow">→</span>
+        </div>
+        <div class="contact-card-body">
+          <span class="contact-card-icon">★</span>
+          <h3>Chowhan Dutta</h3>
         </div>
       </div>
-      <div class="contact-right">
-        <div class="form-group">
-          <input type="text" id="contactName" placeholder="Your Name" />
+      <div class="contact-card">
+        <div class="contact-card-top">
+          <span class="contact-card-label">EMAIL</span>
+          <span class="contact-card-arrow">→</span>
         </div>
-        <div class="form-group">
+        <div class="contact-card-body">
+          <span class="contact-card-icon">✦</span>
+          <h3><a href="mailto:chowhandutta2004@gmail.com">chowhandutta2004@gmail.com</a></h3>
+          <p>For professional correspondence, kindly reach out via email.</p>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-top">
+          <span class="contact-card-label">PHONE</span>
+          <span class="contact-card-arrow">→</span>
+        </div>
+        <div class="contact-card-body">
+          <span class="contact-card-icon">⊞</span>
+          <h3>+91 6304993473</h3>
+          <p>Call availability is minimal; email remains the primary channel.</p>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-top">
+          <span class="contact-card-label">LOCATION</span>
+          <span class="contact-card-arrow">→</span>
+        </div>
+        <div class="contact-card-body">
+          <span class="contact-card-icon">◉</span>
+          <h3>Chennai, India</h3>
+          <p>SRMIST Campus, Kattankulathur</p>
+        </div>
+      </div>
+    </div>
+    <div class="contact-bottom">
+      <div class="contact-socials">
+        <h4>SOCIALS</h4>
+        <div class="socials-list">
+          <p><strong>GITHUB:</strong> <a href="https://github.com/chowhandutta2004-lgtm" target="_blank">/chowhandutta2004-lgtm</a></p>
+          <p><strong>LINKEDIN:</strong> <a href="https://www.linkedin.com/in/chowhan-dutta-5582aa3a4" target="_blank">/chowhan-dutta</a></p>
+        </div>
+      </div>
+      <div class="contact-form-section">
+        <h4>SEND A MESSAGE</h4>
+        <div class="form-row">
+          <input type="text" id="contactName" placeholder="Your Name" />
           <input type="email" id="contactEmail" placeholder="Your Email" />
         </div>
-        <div class="form-group">
-          <textarea id="contactMessage" placeholder="Your Message" rows="5"></textarea>
-        </div>
-        <button class="btn btn-primary" onclick="sendContact()">Send Message →</button>
+        <textarea id="contactMessage" placeholder="Your Message" rows="4"></textarea>
+        <button class="send-btn" onclick="sendContact()">Send Message →</button>
         <div id="contactStatus"></div>
       </div>
     </div>
+    <div class="visitor-count">
+      <span>👁 <span id="visitorCount">0</span> visitors</span>
+    </div>
   </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <span class="footer-logo">chowhan</span>
+      <span class="footer-copy">© 2025 — All rights reserved</span>
+    </div>
+    <div class="footer-right">
+      <span>Built with passion and a lot of AI</span>
+    </div>
+  </footer>
 
   <!-- CHATBOT -->
   <div class="chat-widget" id="chatWidget">
     <div class="chat-header" onclick="toggleChat()">
-      <span>✳ Ask AI about Chowhan</span>
-      <span id="chatToggle">▲</span>
+      <div class="chat-header-left">
+        <span class="chat-header-name">Chowhan's AI</span>
+        <span class="chat-header-status"><span class="status-dot"></span> Online</span>
+      </div>
+      <span id="chatToggle" class="chat-toggle-btn">▲</span>
     </div>
     <div class="chat-body" id="chatBody">
+      <div class="chat-body-art">
+        <div class="chat-3d-ring ring-1"></div>
+        <div class="chat-3d-ring ring-2"></div>
+        <div class="chat-3d-ring ring-3"></div>
+      </div>
       <div class="chat-messages" id="chatMessages">
-        <div class="chat-msg bot">Hey! 👋 I'm Chowhan's AI assistant. Ask me anything about him!</div>
+        <div class="chat-msg bot">Hey! I'm Chowhan's AI assistant. Ask me anything about him!</div>
       </div>
       <div class="chat-input-row">
-        <input type="text" id="chatInput" placeholder="Ask something..." />
-        <button onclick="sendChat()">Send</button>
+        <input type="text" id="chatInput" placeholder="Type your message..." />
+        <button onclick="sendChat()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg>
+        </button>
       </div>
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <span><span class="star">✳</span> Chowhan Dutta © 2025</span>
-    <span>Built with ❤️ and a lot of AI</span>
-  </footer>
-
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
-  <script>
-    // Custom cursor
-    const cursor = document.getElementById('cursor');
-    document.addEventListener('mousemove', e => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-    });
-  </script>
 </body>
 </html>
