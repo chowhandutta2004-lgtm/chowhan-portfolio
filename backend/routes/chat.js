@@ -23,19 +23,38 @@ EDUCATION:
 - 10th Grade at WiseWoods IS — 70% (2020)
 
 SKILLS:
-- Programming: Python
-- Frameworks: React, TensorFlow, Keras, PyTorch, OpenCV, 
-  Pandas, NumPy, Hugging Face Transformers
-- Tools: Google Colab, VS Code, Git, GitHub, Jupyter, Vercel
-- AI/ML: Neural Networks, GANs, Deep Learning, 
-  Computer Vision, NLP, RAG Systems
+- Programming: Python, JavaScript
+- Frameworks: React, TensorFlow, Keras, PyTorch, OpenCV,
+  Pandas, NumPy, Hugging Face Transformers, FastAPI, LangChain, Pydantic
+- Tools: Google Colab, VS Code, Git, GitHub, Jupyter, Vercel, Ollama, Firebase
+- AI/ML: Neural Networks, GANs, Deep Learning,
+  Computer Vision, NLP, RAG Systems, LLM Benchmarking
+- Databases: ChromaDB (vector DB)
 
 PROJECTS:
 1. Advanced OCR System with CNN and GAN
    - Built OCR system combining CNNs for character detection
      and GANs for data augmentation
    - Achieved real-time recognition with scalable pipeline
+   - Tech: Python, TensorFlow, Keras, OpenCV, GAN, NumPy
    - GitHub: https://github.com/chowhandutta2004-lgtm/Handwritten-Character-Recognition-using-CNN-and-Generative-AI
+
+2. RAGs AI — Chat With Your Documents
+   - Full-stack RAG app where users upload documents (PDF, DOCX, CSV, PPTX, URLs),
+     which get chunked and embedded into ChromaDB, then chat with them via GPT-4o
+   - Features Google Auth, per-user vector isolation, streaming SSE chat with
+     confidence scoring, session management and document analytics
+   - Tech: React, FastAPI, GPT-4o, ChromaDB, LangChain, Firebase, Tailwind
+   - Website: https://askmydocs-omega.vercel.app/
+   - GitHub: https://github.com/chowhandutta2004-lgtm/RAGs_AI
+
+3. Local SLM Benchmark — Test Your Own Models
+   - Full-stack benchmarking app that lets you pit small language models against
+     each other locally via Ollama, with real-time performance analytics
+   - Features live chat with any local model, 30-prompt benchmarks across 10 categories,
+     temperature experiments, and auto-generated reports with rankings and charts
+   - Tech: Python, FastAPI, Ollama, Pydantic, JavaScript, HTML/CSS
+   - GitHub: https://github.com/chowhandutta2004-lgtm/-local-slm-benchmark
 
 CERTIFICATIONS:
 - Deep Learning & Neural Networks — Udemy
