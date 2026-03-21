@@ -81,6 +81,7 @@ const projects = [
     technologies: ['Next.js', 'React', 'TypeScript', 'MediaPipe', 'Canvas API'],
     github: 'https://github.com/chowhandutta2004-lgtm/x-ray-vision',
     website: 'https://x-ray-vision.vercel.app/',
+    video: 'x ray.mp4',
     gradient: 'linear-gradient(135deg, #0d47a1, #01579b, #00b0ff)',
     accentColor: '#00b0ff'
   }

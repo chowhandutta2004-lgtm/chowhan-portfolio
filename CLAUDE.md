@@ -34,6 +34,7 @@ Single-page portfolio served by an Express backend. The backend serves `frontend
 - `frontend/ocr-cnn-gan.mp4` — demo video for OCR project
 - `frontend/rags-ai.mp4` — demo video for RAGs AI project
 - `frontend/slm-benchmark.mp4` — demo video for SLM Benchmark project
+- `frontend/x ray.mp4` — demo video for X-Ray Vision project
 
 **Sections:** Hero → Marquee → About → Projects → Tech Stack → Contact → Footer. Floating chatbot widget is always visible.
 
