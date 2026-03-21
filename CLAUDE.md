@@ -33,6 +33,7 @@ Single-page portfolio served by an Express backend. The backend serves `frontend
 - `frontend/img.png-removebg-preview.png` — about section photo (removed background)
 - `frontend/ocr-cnn-gan.mp4` — demo video for OCR project
 - `frontend/rags-ai.mp4` — demo video for RAGs AI project
+- `frontend/slm-benchmark.mp4` — demo video for SLM Benchmark project
 
 **Sections:** Hero → Marquee → About → Projects → Tech Stack → Contact → Footer. Floating chatbot widget is always visible.
 
@@ -49,8 +50,9 @@ Single-page portfolio served by an Express backend. The backend serves `frontend
 **Projects (hardcoded in `script.js`):**
 1. Advanced OCR System with CNN and GAN — Python, TensorFlow, Keras, OpenCV, GAN, NumPy
 2. RAGs AI — Chat With Your Documents — React, FastAPI, GPT-4o, ChromaDB, LangChain, Firebase, Tailwind
+3. Local SLM Benchmark — Test Your Own Models — Python, FastAPI, Ollama, Pydantic, JavaScript, HTML/CSS
 
-**Tech stack sections in HTML:** Intelligence Layer, Neural Craft, Build Engine, Command Center — icons loaded from `cdn.jsdelivr.net/gh/devicons/devicon`.
+**Tech stack sections in HTML:** Intelligence Layer (incl. Ollama), Neural Craft, Build Engine (incl. Pydantic), Command Center — icons loaded from `cdn.jsdelivr.net/gh/devicons/devicon` and `simple-icons`.
 
 **Deployment:** Vercel — `vercel.json` routes all requests through `backend/server.js`.
 

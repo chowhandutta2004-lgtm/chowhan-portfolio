@@ -51,6 +51,22 @@ const projects = [
     video: 'rags-ai.mp4',
     gradient: 'linear-gradient(135deg, #4a148c, #7b1fa2, #e040fb)',
     accentColor: '#e040fb'
+  },
+  {
+    number: '03',
+    name: 'Local SLM Benchmark — Test Your Own Models',
+    description: 'Full-stack benchmarking app that lets you pit small language models against each other locally via Ollama, with real-time performance analytics and detailed reports.',
+    highlights: [
+      'Live chat with any local model + real-time token/latency stats',
+      'Comprehensive 30-prompt benchmarks across 10 categories',
+      'Temperature experiments to visualize randomness effects',
+      'Auto-generated reports with rankings, charts & memory analysis'
+    ],
+    technologies: ['Python', 'FastAPI', 'Ollama', 'Pydantic', 'JavaScript', 'HTML/CSS'],
+    github: 'https://github.com/chowhandutta2004-lgtm/-local-slm-benchmark',
+    video: 'slm-benchmark.mp4',
+    gradient: 'linear-gradient(135deg, #1b5e20, #2e7d32, #00e676)',
+    accentColor: '#00e676'
   }
 ];
 
