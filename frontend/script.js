@@ -3,19 +3,6 @@
 // ====================================
 
 // ====================================
-// 1. VISITOR COUNTER
-// ====================================
-async function countVisitor() {
-  try {
-    const response = await fetch('/api/visitors');
-    const data = await response.json();
-    document.getElementById('visitorCount').textContent = data.count;
-  } catch (error) {
-    console.error('Visitor count error:', error);
-  }
-}
-
-// ====================================
 // 2. PROJECTS DATA + LOADER
 // ====================================
 const projects = [
@@ -547,7 +534,6 @@ function initDragScroll() {
 // INITIALIZE
 // ====================================
 window.addEventListener('load', () => {
-  countVisitor();
   loadProjects();
   initCursor();
   initNavScroll();
