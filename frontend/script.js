@@ -67,6 +67,22 @@ const projects = [
     video: 'slm-benchmark.mp4',
     gradient: 'linear-gradient(135deg, #1b5e20, #2e7d32, #00e676)',
     accentColor: '#00e676'
+  },
+  {
+    number: '04',
+    name: 'X-Ray Vision — Real-Time Webcam X-Ray Effect',
+    description: 'Real-time webcam app that creates sci-fi X-ray visuals — raise both hands to activate a scan zone with skeleton tracking, face mesh, glowing particles, and animated scan lines.',
+    highlights: [
+      'Hand-controlled scan rectangle using MediaPipe hand landmarks',
+      'Multi-body tracking: face (468 pts), hands (21 pts each), pose (33 pts)',
+      'Optimized particle system with 2,000 object-pooled particles',
+      'Edge detection, skeleton overlay, ripple animations & HUD display'
+    ],
+    technologies: ['Next.js', 'React', 'TypeScript', 'MediaPipe', 'Canvas API'],
+    github: 'https://github.com/chowhandutta2004-lgtm/x-ray-vision',
+    website: 'https://x-ray-vision.vercel.app/',
+    gradient: 'linear-gradient(135deg, #0d47a1, #01579b, #00b0ff)',
+    accentColor: '#00b0ff'
   }
 ];
 

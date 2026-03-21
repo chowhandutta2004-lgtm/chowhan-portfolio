@@ -24,11 +24,12 @@ EDUCATION:
 
 SKILLS:
 - Programming: Python, JavaScript
-- Frameworks: React, TensorFlow, Keras, PyTorch, OpenCV,
+- Frameworks: React, Next.js, TensorFlow, Keras, PyTorch, OpenCV,
   Pandas, NumPy, Hugging Face Transformers, FastAPI, LangChain, Pydantic
 - Tools: Google Colab, VS Code, Git, GitHub, Jupyter, Vercel, Ollama, Firebase
 - AI/ML: Neural Networks, GANs, Deep Learning,
-  Computer Vision, NLP, RAG Systems, LLM Benchmarking
+  Computer Vision, NLP, RAG Systems, LLM Benchmarking, MediaPipe
+- Languages: Python, JavaScript, TypeScript
 - Databases: ChromaDB (vector DB)
 
 PROJECTS:
@@ -55,6 +56,15 @@ PROJECTS:
      temperature experiments, and auto-generated reports with rankings and charts
    - Tech: Python, FastAPI, Ollama, Pydantic, JavaScript, HTML/CSS
    - GitHub: https://github.com/chowhandutta2004-lgtm/-local-slm-benchmark
+
+4. X-Ray Vision — Real-Time Webcam X-Ray Effect
+   - Real-time webcam app that creates sci-fi X-ray visuals using hand-controlled
+     scan zones with skeleton tracking, face mesh, glowing particles, and scan lines
+   - Multi-body tracking: face (468 pts), hands (21 pts each), pose (33 pts)
+   - Optimized particle system with 2,000 object-pooled particles, no runtime allocations
+   - Tech: Next.js 16, React 19, TypeScript, MediaPipe Tasks Vision, Canvas 2D API
+   - Website: https://x-ray-vision.vercel.app/
+   - GitHub: https://github.com/chowhandutta2004-lgtm/x-ray-vision
 
 CERTIFICATIONS:
 - Deep Learning & Neural Networks — Udemy

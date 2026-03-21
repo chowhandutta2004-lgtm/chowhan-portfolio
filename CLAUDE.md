@@ -51,8 +51,9 @@ Single-page portfolio served by an Express backend. The backend serves `frontend
 1. Advanced OCR System with CNN and GAN — Python, TensorFlow, Keras, OpenCV, GAN, NumPy
 2. RAGs AI — Chat With Your Documents — React, FastAPI, GPT-4o, ChromaDB, LangChain, Firebase, Tailwind
 3. Local SLM Benchmark — Test Your Own Models — Python, FastAPI, Ollama, Pydantic, JavaScript, HTML/CSS
+4. X-Ray Vision — Real-Time Webcam X-Ray Effect — Next.js, React, TypeScript, MediaPipe, Canvas API
 
-**Tech stack sections in HTML:** Intelligence Layer (incl. Ollama), Neural Craft, Build Engine (incl. Pydantic), Command Center — icons loaded from `cdn.jsdelivr.net/gh/devicons/devicon` and `simple-icons`.
+**Tech stack sections in HTML:** Intelligence Layer (incl. Ollama), Neural Craft (incl. MediaPipe), Build Engine (incl. Next.js, TypeScript, Pydantic), Command Center — icons loaded from `cdn.jsdelivr.net/gh/devicons/devicon` and `simple-icons`.
 
 **Deployment:** Vercel — `vercel.json` routes all requests through `backend/server.js`.
 
