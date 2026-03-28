@@ -8,6 +8,23 @@
 const projects = [
   {
     number: '01',
+    name: 'Real-Time Weapon Detection — YOLOv11',
+    description: 'Full-stack weapon detection app using YOLOv11s with live webcam, CCTV streaming, and video/image upload support for identifying handguns, long guns, knives, and explosives.',
+    highlights: [
+      'YOLOv11s with ONNX Runtime for fast CPU inference',
+      'Live webcam & CCTV stream detection via WebSockets',
+      'Deep knife mode with quadrant scanning & test-time augmentation',
+      'Alert system with detection thumbnails & confidence tuning'
+    ],
+    technologies: ['Python', 'FastAPI', 'YOLOv11', 'OpenCV', 'ONNX', 'WebSocket', 'Docker'],
+    github: 'https://github.com/chowhandutta2004-lgtm/realtime-weapon-detection-yolov11',
+    website: 'https://chowhandutta-realtime-weapon-detection-yolov11.hf.space',
+    video: 'ai weapon.mp4',
+    gradient: 'linear-gradient(135deg, #b71c1c, #c62828, #ff1744)',
+    accentColor: '#ff1744'
+  },
+  {
+    number: '02',
     name: 'Advanced OCR System with CNN and GAN',
     description: 'OCR system combining CNNs for character detection and GANs for data augmentation of handwritten text.',
     highlights: [
@@ -23,7 +40,7 @@ const projects = [
     accentColor: '#00e5ff'
   },
   {
-    number: '02',
+    number: '03',
     name: 'RAGs AI — Chat With Your Documents',
     description: 'Full-stack RAG app where users upload documents, which get chunked and embedded into ChromaDB, then chat with them via GPT-4o.',
     highlights: [
@@ -40,7 +57,7 @@ const projects = [
     accentColor: '#e040fb'
   },
   {
-    number: '03',
+    number: '04',
     name: 'Local SLM Benchmark — Test Your Own Models',
     description: 'Full-stack benchmarking app that lets you pit small language models against each other locally via Ollama, with real-time performance analytics and detailed reports.',
     highlights: [
@@ -56,7 +73,7 @@ const projects = [
     accentColor: '#00e676'
   },
   {
-    number: '04',
+    number: '05',
     name: 'X-Ray Vision — Real-Time Webcam X-Ray Effect',
     description: 'Real-time webcam app that creates sci-fi X-ray visuals — raise both hands to activate a scan zone with skeleton tracking, face mesh, glowing particles, and animated scan lines.',
     highlights: [

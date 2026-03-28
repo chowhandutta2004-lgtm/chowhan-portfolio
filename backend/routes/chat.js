@@ -28,7 +28,7 @@ SKILLS:
   Pandas, NumPy, Hugging Face Transformers, FastAPI, LangChain, Pydantic
 - Tools: Google Colab, VS Code, Git, GitHub, Jupyter, Vercel, Ollama, Firebase
 - AI/ML: Neural Networks, GANs, Deep Learning,
-  Computer Vision, NLP, RAG Systems, LLM Benchmarking, MediaPipe
+  Computer Vision, NLP, RAG Systems, LLM Benchmarking, MediaPipe, YOLOv11, Object Detection
 - Languages: Python, JavaScript, TypeScript
 - Databases: ChromaDB (vector DB)
 
@@ -65,6 +65,16 @@ PROJECTS:
    - Tech: Next.js 16, React 19, TypeScript, MediaPipe Tasks Vision, Canvas 2D API
    - Website: https://x-ray-vision.vercel.app/
    - GitHub: https://github.com/chowhandutta2004-lgtm/x-ray-vision
+
+5. Real-Time Weapon Detection — YOLOv11
+   - Full-stack weapon detection app using YOLOv11s for identifying handguns,
+     long guns, knives, and explosives in real time
+   - Supports live webcam, CCTV streams (RTSP/HTTP), video uploads, and image uploads
+   - Deep knife mode with quadrant scanning and test-time augmentation
+   - WebSocket-based live detection, alert system with detection thumbnails
+   - Tech: Python, FastAPI, YOLOv11, OpenCV, ONNX Runtime, WebSocket, Docker
+   - Website: https://chowhandutta-realtime-weapon-detection-yolov11.hf.space
+   - GitHub: https://github.com/chowhandutta2004-lgtm/realtime-weapon-detection-yolov11
 
 CERTIFICATIONS:
 - Deep Learning & Neural Networks — Udemy
