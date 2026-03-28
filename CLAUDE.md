@@ -35,6 +35,7 @@ Single-page portfolio served by an Express backend. The backend serves `frontend
 - `frontend/rags-ai.mp4` — demo video for RAGs AI project
 - `frontend/slm-benchmark.mp4` — demo video for SLM Benchmark project
 - `frontend/x ray.mp4` — demo video for X-Ray Vision project
+- `frontend/ai weapon.mp4` — demo video for Weapon Detection project
 
 **Sections:** Hero → Marquee → About → Projects → Tech Stack → Contact → Footer. Floating chatbot widget is always visible.
 
@@ -49,12 +50,13 @@ Single-page portfolio served by an Express backend. The backend serves `frontend
 **Design system:** Dark theme — backgrounds `#0a0a0a`/`#111111`, accent `#e63946` (dark red). Fonts: 'Bebas Neue' (display), 'Playfair Display' (italic hero title), 'Inter' (body).
 
 **Projects (hardcoded in `script.js`):**
-1. Advanced OCR System with CNN and GAN — Python, TensorFlow, Keras, OpenCV, GAN, NumPy
-2. RAGs AI — Chat With Your Documents — React, FastAPI, GPT-4o, ChromaDB, LangChain, Firebase, Tailwind
-3. Local SLM Benchmark — Test Your Own Models — Python, FastAPI, Ollama, Pydantic, JavaScript, HTML/CSS
-4. X-Ray Vision — Real-Time Webcam X-Ray Effect — Next.js, React, TypeScript, MediaPipe, Canvas API
+1. Real-Time Weapon Detection — YOLOv11 — Python, FastAPI, YOLOv11, OpenCV, ONNX, WebSocket, Docker
+2. Advanced OCR System with CNN and GAN — Python, TensorFlow, Keras, OpenCV, GAN, NumPy
+3. RAGs AI — Chat With Your Documents — React, FastAPI, GPT-4o, ChromaDB, LangChain, Firebase, Tailwind
+4. Local SLM Benchmark — Test Your Own Models — Python, FastAPI, Ollama, Pydantic, JavaScript, HTML/CSS
+5. X-Ray Vision — Real-Time Webcam X-Ray Effect — Next.js, React, TypeScript, MediaPipe, Canvas API
 
-**Tech stack sections in HTML:** Intelligence Layer (incl. Ollama), Neural Craft (incl. MediaPipe), Build Engine (incl. Next.js, TypeScript, Pydantic), Command Center — icons loaded from `cdn.jsdelivr.net/gh/devicons/devicon` and `simple-icons`.
+**Tech stack sections in HTML:** Intelligence Layer (incl. Ollama, Ultralytics), Neural Craft (incl. MediaPipe, ONNX), Build Engine (incl. Next.js, TypeScript, Pydantic), Command Center (incl. Docker) — icons loaded from `cdn.jsdelivr.net/gh/devicons/devicon` and `simple-icons`.
 
 **Deployment:** Vercel — `vercel.json` routes all requests through `backend/server.js`.
 
