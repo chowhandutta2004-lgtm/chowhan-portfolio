@@ -387,6 +387,27 @@ nav.scrolled {
   line-height: 1.7;
 }
 
+.resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  padding: 0.7rem 1.5rem;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.resume-btn:hover {
+  background: #c62828;
+  transform: translateY(-2px);
+}
+
 .hero-categories {
   display: flex;
   gap: 0.75rem;
