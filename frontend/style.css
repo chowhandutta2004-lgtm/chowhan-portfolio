@@ -504,7 +504,7 @@ nav.scrolled {
 .marquee-track {
   display: flex;
   white-space: nowrap;
-  animation: marquee 20s linear infinite;
+  animation: marquee 35s linear infinite;
 }
 
 .marquee-track span {
