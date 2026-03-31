@@ -550,6 +550,29 @@ function initDragScroll() {
 // ====================================
 // INITIALIZE
 // ====================================
+// ====================================
+// MOBILE MENU
+// ====================================
+function initMobileMenu() {
+  const hamburger = document.getElementById('navHamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (!hamburger || !mobileMenu) return;
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+  });
+
+  mobileMenu.querySelectorAll('.mobile-menu-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+}
+
 window.addEventListener('load', () => {
   loadProjects();
   initCursor();
@@ -558,4 +581,5 @@ window.addEventListener('load', () => {
   initScrollAnimations();
   initDragScroll();
   observeElements();
+  initMobileMenu();
 });
