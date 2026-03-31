@@ -28,8 +28,14 @@ app.use(cors());
 // Allows server to understand JSON data
 app.use(express.json());
 
-// Serve frontend files to the browser
-app.use(express.static(path.join(__dirname, '../frontend')));
+// Serve frontend files to the browser (no cache for HTML/CSS/JS)
+app.use(express.static(path.join(__dirname, '../frontend'), {
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith('.html') || filePath.endsWith('.css') || filePath.endsWith('.js')) {
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    }
+  }
+}));
 
 // ====================================
 // ROUTES — Different URLs for different features

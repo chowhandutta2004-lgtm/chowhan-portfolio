@@ -13,7 +13,10 @@
       },
       {
         "src": "/(.*)",
-        "dest": "backend/server.js"
+        "dest": "backend/server.js",
+        "headers": {
+          "Cache-Control": "no-cache, no-store, must-revalidate"
+        }
       }
     ]
   }
