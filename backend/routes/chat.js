@@ -33,40 +33,7 @@ SKILLS:
 - Databases: ChromaDB (vector DB)
 
 PROJECTS:
-1. Advanced OCR System with CNN and GAN
-   - Built OCR system combining CNNs for character detection
-     and GANs for data augmentation
-   - Achieved real-time recognition with scalable pipeline
-   - Tech: Python, TensorFlow, Keras, OpenCV, GAN, NumPy
-   - GitHub: https://github.com/chowhandutta2004-lgtm/Handwritten-Character-Recognition-using-CNN-and-Generative-AI
-
-2. RAGs AI — Chat With Your Documents
-   - Full-stack RAG app where users upload documents (PDF, DOCX, CSV, PPTX, URLs),
-     which get chunked and embedded into ChromaDB, then chat with them via GPT-4o
-   - Features Google Auth, per-user vector isolation, streaming SSE chat with
-     confidence scoring, session management and document analytics
-   - Tech: React, FastAPI, GPT-4o, ChromaDB, LangChain, Firebase, Tailwind
-   - Website: https://askmydocs-omega.vercel.app/
-   - GitHub: https://github.com/chowhandutta2004-lgtm/RAGs_AI
-
-3. Local SLM Benchmark — Test Your Own Models
-   - Full-stack benchmarking app that lets you pit small language models against
-     each other locally via Ollama, with real-time performance analytics
-   - Features live chat with any local model, 30-prompt benchmarks across 10 categories,
-     temperature experiments, and auto-generated reports with rankings and charts
-   - Tech: Python, FastAPI, Ollama, Pydantic, JavaScript, HTML/CSS
-   - GitHub: https://github.com/chowhandutta2004-lgtm/-local-slm-benchmark
-
-4. X-Ray Vision — Real-Time Webcam X-Ray Effect
-   - Real-time webcam app that creates sci-fi X-ray visuals using hand-controlled
-     scan zones with skeleton tracking, face mesh, glowing particles, and scan lines
-   - Multi-body tracking: face (468 pts), hands (21 pts each), pose (33 pts)
-   - Optimized particle system with 2,000 object-pooled particles, no runtime allocations
-   - Tech: Next.js 16, React 19, TypeScript, MediaPipe Tasks Vision, Canvas 2D API
-   - Website: https://x-ray-vision.vercel.app/
-   - GitHub: https://github.com/chowhandutta2004-lgtm/x-ray-vision
-
-5. Real-Time Weapon Detection — YOLOv11
+1. Real-Time Weapon Detection — YOLOv11
    - Full-stack weapon detection app using YOLOv11s for identifying handguns,
      long guns, knives, and explosives in real time
    - Supports live webcam, CCTV streams (RTSP/HTTP), video uploads, and image uploads
@@ -75,6 +42,39 @@ PROJECTS:
    - Tech: Python, FastAPI, YOLOv11, OpenCV, ONNX Runtime, WebSocket, Docker
    - Website: https://chowhandutta-realtime-weapon-detection-yolov11.hf.space
    - GitHub: https://github.com/chowhandutta2004-lgtm/realtime-weapon-detection-yolov11
+
+2. Advanced OCR System with CNN and GAN
+   - Built OCR system combining CNNs for character detection
+     and GANs for data augmentation
+   - Achieved real-time recognition with scalable pipeline
+   - Tech: Python, TensorFlow, Keras, OpenCV, GAN, NumPy
+   - GitHub: https://github.com/chowhandutta2004-lgtm/Handwritten-Character-Recognition-using-CNN-and-Generative-AI
+
+3. RAGs AI — Chat With Your Documents
+   - Full-stack RAG app where users upload documents (PDF, DOCX, CSV, PPTX, URLs),
+     which get chunked and embedded into ChromaDB, then chat with them via GPT-4o
+   - Features Google Auth, per-user vector isolation, streaming SSE chat with
+     confidence scoring, session management and document analytics
+   - Tech: React, FastAPI, GPT-4o, ChromaDB, LangChain, Firebase, Tailwind
+   - Website: https://askmydocs-omega.vercel.app/
+   - GitHub: https://github.com/chowhandutta2004-lgtm/RAGs_AI
+
+4. Local SLM Benchmark — Test Your Own Models
+   - Full-stack benchmarking app that lets you pit small language models against
+     each other locally via Ollama, with real-time performance analytics
+   - Features live chat with any local model, 30-prompt benchmarks across 10 categories,
+     temperature experiments, and auto-generated reports with rankings and charts
+   - Tech: Python, FastAPI, Ollama, Pydantic, JavaScript, HTML/CSS
+   - GitHub: https://github.com/chowhandutta2004-lgtm/-local-slm-benchmark
+
+5. X-Ray Vision — Real-Time Webcam X-Ray Effect
+   - Real-time webcam app that creates sci-fi X-ray visuals using hand-controlled
+     scan zones with skeleton tracking, face mesh, glowing particles, and scan lines
+   - Multi-body tracking: face (468 pts), hands (21 pts each), pose (33 pts)
+   - Optimized particle system with 2,000 object-pooled particles, no runtime allocations
+   - Tech: Next.js 16, React 19, TypeScript, MediaPipe Tasks Vision, Canvas 2D API
+   - Website: https://x-ray-vision.vercel.app/
+   - GitHub: https://github.com/chowhandutta2004-lgtm/x-ray-vision
 
 CERTIFICATIONS:
 - Deep Learning & Neural Networks — Udemy
