@@ -97,7 +97,7 @@ function loadProjects() {
   container.innerHTML = projects.map(project => `
     <div class="project-flashcard reveal" style="--card-accent: ${project.accentColor}">
       <div class="project-flashcard-bg" style="background: ${project.gradient}"></div>
-      ${project.video ? `<video src="${project.video}" class="project-flashcard-img" autoplay muted loop playsinline></video>` : project.image ? `<img src="${project.image}" alt="${project.name}" class="project-flashcard-img"/>` : ''}
+      ${project.video ? `<video data-src="${project.video}" class="project-flashcard-img" muted loop playsinline preload="none"></video>` : project.image ? `<img src="${project.image}" alt="${project.name}" class="project-flashcard-img" loading="lazy"/>` : ''}
       <div class="project-flashcard-overlay"></div>
       <span class="project-flashcard-number">${project.number}</span>
       <div class="project-flashcard-content">
@@ -573,6 +573,25 @@ function initMobileMenu() {
   });
 }
 
+// ====================================
+// LAZY LOAD VIDEOS
+// ====================================
+function initLazyVideos() {
+  const videos = document.querySelectorAll('video[data-src]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const video = entry.target;
+        video.src = video.dataset.src;
+        video.autoplay = true;
+        video.play();
+        observer.unobserve(video);
+      }
+    });
+  }, { rootMargin: '200px' });
+  videos.forEach(v => observer.observe(v));
+}
+
 window.addEventListener('load', () => {
   loadProjects();
   initCursor();
@@ -582,4 +601,5 @@ window.addEventListener('load', () => {
   initDragScroll();
   observeElements();
   initMobileMenu();
+  initLazyVideos();
 });
