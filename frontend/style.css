@@ -360,6 +360,9 @@ nav.scrolled {
 
 .hero-title {
   margin-bottom: 2rem;
+  position: relative;
+  z-index: 5;
+  mix-blend-mode: exclusion;
 }
 
 .hero-line {
