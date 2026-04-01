@@ -36,6 +36,7 @@ Single-page portfolio served by an Express backend. The backend serves `frontend
 - `frontend/slm-benchmark.mp4` — demo video for SLM Benchmark project
 - `frontend/x ray.mp4` — demo video for X-Ray Vision project
 - `frontend/ai weapon.mp4` — demo video for Weapon Detection project
+- `frontend/chowhandutta resume.pdf` — resume PDF (opens in new tab from nav)
 
 **Sections:** Hero → Marquee → About → Projects → Tech Stack → Contact → Footer. Floating chatbot widget is always visible.
 
@@ -46,6 +47,9 @@ Single-page portfolio served by an Express backend. The backend serves `frontend
 - 3D card tilt on project flashcards (mouse-driven perspective transform)
 - Drag-to-scroll on projects grid
 - Floating "CONNECT" button that hides on scroll down
+- Hamburger menu + full-screen mobile nav overlay (768px and below)
+- Lazy-loaded project videos (only load when scrolled into view)
+- Resume button in nav bar (opens PDF in new tab)
 
 **Design system:** Dark theme — backgrounds `#0a0a0a`/`#111111`, accent `#e63946` (dark red). Fonts: 'Bebas Neue' (display), 'Playfair Display' (italic hero title), 'Inter' (body).
 
@@ -58,6 +62,8 @@ Single-page portfolio served by an Express backend. The backend serves `frontend
 
 **Tech stack sections in HTML:** Intelligence Layer (incl. Ollama, Ultralytics), Neural Craft (incl. MediaPipe, ONNX), Build Engine (incl. Next.js, TypeScript, Pydantic), Command Center (incl. Docker) — icons loaded from `cdn.jsdelivr.net/gh/devicons/devicon` and `simple-icons`.
 
-**Deployment:** Vercel — `vercel.json` routes all requests through `backend/server.js`.
+**Performance:** All demo videos are compressed (total ~4 MB) and lazy-loaded. Hero image compressed. No-cache headers set for HTML/CSS/JS to prevent stale content. Keep video files small to stay within Vercel's 10 GB/month Fast Origin Transfer limit.
+
+**Deployment:** Vercel — `vercel.json` routes all requests through `backend/server.js` with no-cache headers.
 
 **Dependencies:** `express`, `cors`, `dotenv`, `nodemailer` (no npm AI SDK — HF API called via fetch in `chat.js`).
