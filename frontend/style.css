@@ -366,7 +366,7 @@ nav.scrolled {
 
 .hero-line {
   display: block;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero-line-1 {
