@@ -77,35 +77,7 @@ img { display: block; }
   transform: translateY(100%);
 }
 
-/* ============================
-   CUSTOM CURSOR
-============================= */
-.cursor {
-  position: fixed;
-  width: 8px;
-  height: 8px;
-  background: var(--accent);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s, height 0.2s, background 0.2s;
-  mix-blend-mode: difference;
-}
-
-.cursor-follower {
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  border: 1px solid rgba(232,114,58,0.3);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s, border-color 0.3s;
-}
-
-body:hover .cursor { width: 8px; height: 8px; }
+/* Custom cursor removed — ghost cursor effect is now the primary cursor */
 
 /* ============================
    FLOATING CONNECT BUTTON
@@ -1546,7 +1518,6 @@ footer {
 @media (max-width: 768px) {
   /* -- Cursor -- */
   body { cursor: auto; }
-  .cursor, .cursor-follower { display: none !important; }
 
   /* -- Nav -- */
   nav { padding: 1rem 1.25rem; }

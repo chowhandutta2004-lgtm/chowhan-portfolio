@@ -26,7 +26,7 @@ Single-page portfolio served by an Express backend. The backend serves `frontend
 - `POST /api/contact` — Contact form emails via Nodemailer/Gmail, `backend/routes/contact.js`
 - `GET /api/visitors` — In-memory visitor counter (resets on restart), `backend/routes/visitors.js`
 
-**Frontend** is a single HTML page (`frontend/index.html`) with vanilla JS (`frontend/script.js`) and CSS (`frontend/style.css`). Project data is hardcoded in `script.js`. Animations use GSAP 3.12.5 + ScrollTrigger (loaded via CDN) and Intersection Observer for `.reveal` elements.
+**Frontend** is a single HTML page (`frontend/index.html`) with vanilla JS (`frontend/script.js`, `frontend/ghost-cursor.js`) and CSS (`frontend/style.css`). Project data is hardcoded in `script.js`. Animations use GSAP 3.12.5 + ScrollTrigger (loaded via CDN) and Intersection Observer for `.reveal` elements. Ghost cursor uses Three.js r128 + post-processing via CDN.
 
 **Frontend assets:**
 - `frontend/image.jpg` — hero background photo
@@ -41,7 +41,7 @@ Single-page portfolio served by an Express backend. The backend serves `frontend
 **Sections:** Hero → Marquee → About → Projects → Tech Stack → Contact → Footer. Floating chatbot widget is always visible.
 
 **UI features:**
-- Custom cursor (`.cursor` + `.cursor-follower`)
+- Ghost cursor effect (`frontend/ghost-cursor.js`) — Three.js WebGL smoky trail that follows the mouse, purple (`#B19EEF`), `mix-blend-mode: screen`, disabled on mobile/touch. Replaces the old dot+follower cursor. Three.js r128 + post-processing loaded via CDN.
 - Full-screen loader animation (GSAP, spells out "CHOWHAN DUTTA")
 - Marquee ticker strip between Hero and About
 - 3D card tilt on project flashcards (mouse-driven perspective transform)
@@ -66,4 +66,4 @@ Single-page portfolio served by an Express backend. The backend serves `frontend
 
 **Deployment:** Vercel — `vercel.json` routes all requests through `backend/server.js` with no-cache headers.
 
-**Dependencies:** `express`, `cors`, `dotenv`, `nodemailer` (no npm AI SDK — HF API called via fetch in `chat.js`).
+**Dependencies:** `express`, `cors`, `dotenv`, `nodemailer` (no npm AI SDK — HF API called via fetch in `chat.js`). **CDN libs:** GSAP 3.12.5, Three.js r128 + post-processing (EffectComposer, RenderPass, ShaderPass, UnrealBloomPass).
